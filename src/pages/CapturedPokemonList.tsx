@@ -3,9 +3,23 @@ import PokemonContext from "../context/PokemonContext";
 
 function CapturedPokemonList() {
 
-    const PkmnContext = useContext(PokemonContext);
+    const {pokedex} = useContext(PokemonContext);
 
-    return ( <h1>Captured Pokemon</h1> );
+    return ( 
+    <>
+    <h1>Captured Pokemon</h1> 
+
+    {pokedex && pokedex.map((pokemon)=>{
+        console.log(pokemon);
+        return (
+            <section className="pokedex-item" key={pokemon.id}>
+                <p>{pokemon.name}</p>
+
+            </section>
+        )
+    })}
+    </>
+    )
 }
 
 export default CapturedPokemonList;

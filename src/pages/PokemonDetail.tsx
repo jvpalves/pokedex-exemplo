@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { POKE_URL } from "../context/PokemonProvider";
 import Header from "../components/Header";
 import {History, Location} from 'history';
 import { PokemonDetails } from "../types/Pokemon";
+import PokemonContext from "../context/PokemonContext";
+import { Link } from "react-router-dom";
 
 
 
@@ -11,15 +13,21 @@ type MatchParams = {
     params: {id: string}
 }
 
-type PokemonDetailProps = {
+type Props = {
     history: History ,
     match: MatchParams,
     location: Location
 }
 
 
-function PokemonDetail({match: {params: {id}}}: PokemonDetailProps) {
+function PokemonDetail({match: {params: {id}}}: Props) {
     const [pokemon, setPokemon] = useState<PokemonDetails>();
+    const {setPokedex, pokedex} = useContext(PokemonContext);
+
+    const handleCapturePokemon = (pokemon: PokemonDetails)=>
+    {
+        setPokedex([...pokedex, pokemon]);
+    }
     
     useEffect(()=>{
         async function fetchPokemon(url: string) {
@@ -72,6 +80,8 @@ function PokemonDetail({match: {params: {id}}}: PokemonDetailProps) {
             <p>Speed: {pokemon.stats?.speed}</p>
             </section>
             </div>
+            <button type="button" onClick={() =>handleCapturePokemon(pokemon)}>Capturar!</button>
+            <Link to={'/pokedex'}> Ir para a pokedex</Link>
             </>
             )}</main>
             </>

@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from "react"
 import PokemonContext from "./PokemonContext";
+import { PokemonDetails } from "../types/Pokemon";
 
 export const POKE_URL = 'https://pokeapi.co/api/v2/pokemon'; //?offset=&limit=151
 
@@ -11,6 +12,7 @@ const PokemonProvider = ({children}: Props) => {
     
     
     const [pokemonList, setPokemonList] = useState([]);
+    const [pokedex, setPokedex] = useState<PokemonDetails[]>([]);
     
     useEffect(()=>{
         async function fetchPokemon(url: string) {
@@ -24,7 +26,7 @@ const PokemonProvider = ({children}: Props) => {
     
     
     return (
-        <PokemonContext.Provider value={{pokemonList, setPokemonList}} >
+        <PokemonContext.Provider value={{pokemonList, setPokemonList, pokedex, setPokedex}} >
         {children}
         </PokemonContext.Provider>
         )

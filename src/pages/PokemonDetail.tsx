@@ -26,7 +26,11 @@ function PokemonDetail({match: {params: {id}}}: Props) {
 
     const handleCapturePokemon = (pokemon: PokemonDetails)=>
     {
-        setPokedex([...pokedex, pokemon]);
+        if(pokedex.length <=6){
+            setPokedex([...pokedex, pokemon]);
+        }else{
+            alert('You can only have 6 pokemon at your party');
+        }
     }
     
     useEffect(()=>{

@@ -11,7 +11,7 @@ const PokemonList = () =>{
     return(
         <>
         <Header />
-        <main className="pokedex-container">
+        <main className="pokemon-container">
         {context.pokemonList.map((pokemon: Pokemon) => {
             const id = pokemon.url.split('/')[6];
             return(

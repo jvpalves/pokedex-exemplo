@@ -1,25 +1,32 @@
 import { useContext } from "react";
 import PokemonContext from "../context/PokemonContext";
+import Header from "../components/Header";
 
 function CapturedPokemonList() {
-
+    
     const {pokedex} = useContext(PokemonContext);
-
+    
     return ( 
-    <>
-    <h1>Captured Pokemon</h1> 
-
-    {pokedex && pokedex.map((pokemon)=>{
-        console.log(pokemon);
-        return (
-            <section className="pokedex-item" key={pokemon.id}>
+        <>
+        <Header />
+        <h1>Captured Pokemon</h1> 
+        <main className="pokedex-container">
+        
+        {pokedex && pokedex.map((pokemon)=>{
+            console.log(pokemon);
+            return (
+                <section className="pokedex-item" key={pokemon.id}>
+                <picture className={pokemon.type}>
+                <img className="pokedex-image" src={pokemon.sprite} />
+                </picture>
                 <p>{pokemon.name}</p>
-
-            </section>
-        )
-    })}
-    </>
-    )
-}
-
-export default CapturedPokemonList;
+                
+                </section>
+                )
+            })}
+            </main>
+            </>
+            )
+        }
+        
+        export default CapturedPokemonList;

@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react"
-import PokemonContext from "./PokedexContext";
+import PokemonContext from "./PokemonContext";
 
 export const POKE_URL = 'https://pokeapi.co/api/v2/pokemon'; //?offset=&limit=151
 

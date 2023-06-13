@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import PokemonContext from "../context/PokedexContext"
+import PokemonContext from "../context/PokemonContext"
 import { Pokemon } from "../types/Pokemon";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";

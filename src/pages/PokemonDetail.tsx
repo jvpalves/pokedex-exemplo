@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { POKE_URL } from "../context/PokedexProvider";
+import { POKE_URL } from "../context/PokemonProvider";
 import Header from "../components/Header";
 import {History, Location} from 'history';
 import { PokemonDetails } from "../types/Pokemon";

@@ -28,6 +28,7 @@ function PokemonDetail({match: {params: {id}}}: Props) {
     {
         if(pokedex.length <=6){
             setPokedex([...pokedex, pokemon]);
+            alert('Pokemon captured! Check your pokédex')
         }else{
             alert('You can only have 6 pokemon at your party');
         }
@@ -63,7 +64,7 @@ function PokemonDetail({match: {params: {id}}}: Props) {
     return ( 
         <>
         <Header/>
-        <main>{pokemon && (
+        <main className="pokemon-detail-container">{pokemon && (
             <>
             <h2>{pokemon.name}</h2>
             <div className="pokemon-detail">
@@ -84,8 +85,7 @@ function PokemonDetail({match: {params: {id}}}: Props) {
             <p>Speed: {pokemon.stats?.speed}</p>
             </section>
             </div>
-            <button type="button" onClick={() =>handleCapturePokemon(pokemon)}>Capturar!</button>
-            <Link to={'/pokedex'}> Ir para a pokedex</Link>
+            <button type="button" className="capture-btn" onClick={() =>handleCapturePokemon(pokemon)}>Capturar!</button>
             </>
             )}</main>
             </>

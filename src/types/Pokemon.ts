@@ -11,3 +11,14 @@ export type PokemonStats = {
     specialDefense: number,
     speed: number
 }
+
+export type PokemonDetails = {
+    id: number,
+    name: string,
+    ability: string,
+    baseExperience: number,
+    height: number,
+    sprite: string,
+    type: string,
+    stats?: PokemonStats
+}

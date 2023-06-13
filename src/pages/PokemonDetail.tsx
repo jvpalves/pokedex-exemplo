@@ -2,18 +2,9 @@ import { useEffect, useState } from "react";
 import { POKE_URL } from "../context/PokedexProvider";
 import Header from "../components/Header";
 import {History, Location} from 'history';
-import { PokemonStats } from "../types/Pokemon";
+import { PokemonDetails } from "../types/Pokemon";
 
-export type PokemonDetails = {
-    id: number,
-    name: string,
-    ability: string,
-    baseExperience: number,
-    height: number,
-    sprite: string,
-    type: string,
-    stats?: PokemonStats
-}
+
 
 type MatchParams = {
     name: string,

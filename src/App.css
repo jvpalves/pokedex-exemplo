@@ -1,13 +1,13 @@
 header {
   padding: 20px 0;
-  background-color: red;
-  color: white;
+  background-color: rgb(185, 185, 185);
   margin-bottom: 20px;
 }
 
 header a {
   text-decoration: none;
-  color: white;
+  color: rgb(60, 60, 60);
+  text-align: center;
 }
 
 main h2 {
@@ -18,12 +18,13 @@ main h2 {
 
 .pokedex-container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 200px 200px 200px;
   text-align: center;
+  justify-content: center;
 }
 
 .pokemon-item{
-  background-image: url('../src/assets/pokeicon.jpeg');
+  background-image: url('../src/assets/pokeicon.png');
   background-position: center;
   background-size: 320px;
   min-height: 120px;
@@ -39,16 +40,17 @@ main h2 {
 .pokedex-container a {
   text-decoration: none;
   font-family: Helvetica, sans-serif;
-  color: white;
+  color: #353535;
 }
 
 .pokedex-container a:visited {
-  color: white;
+  color: 353535;
 }
 
 .pokedex-container a:hover{
-  font-size: 24px;
-  text-shadow: #ffffffda;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: #353535;
 }
 
 .pokemon-detail {

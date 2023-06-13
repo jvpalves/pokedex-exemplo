@@ -8,7 +8,7 @@ export type GlobalContent = {
 
 const PokemonContext = createContext<GlobalContent>({
     pokemonList: [],
-    setPokemonList: ()=>{console.log("oi")},
+    setPokemonList: ()=>{[]},
 });
 
 export default PokemonContext;

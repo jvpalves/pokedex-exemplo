@@ -23,14 +23,16 @@ main h2 {
 }
 
 .pokemon-item{
-  background-color:grey;
+  background-image: url('../src/assets/pokeicon.jpeg');
+  background-position: center;
+  background-size: 320px;
   min-height: 120px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 5%;
 }
 
@@ -45,7 +47,8 @@ main h2 {
 }
 
 .pokedex-container a:hover{
-  font-size: 33px;
+  font-size: 24px;
+  text-shadow: #ffffffda;
 }
 
 .pokemon-detail {

@@ -17,7 +17,7 @@ const PokemonList = () =>{
             return(
                 <Link className="pokemon-item" key={id} to={`/${id}`}>
                 <p>{pokemon.name}</p>
-                <p>{id}</p>
+                <p>{("00" + id).slice(-3)}</p>
                 </Link>
                 ) 
             })

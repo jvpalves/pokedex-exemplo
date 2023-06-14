@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react"
 import PokemonContext from "./PokemonContext";
-import { PokemonDetails } from "../types/Pokemon";
+import { Pokemon, PokemonDetails } from "../types/Pokemon";
 
 export const POKE_URL = 'https://pokeapi.co/api/v2/pokemon'; //?offset=&limit=151
 
@@ -11,7 +11,7 @@ type Props = {
 const PokemonProvider = ({children}: Props) => {
     
     
-    const [pokemonList, setPokemonList] = useState([]);
+    const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
     const [pokedex, setPokedex] = useState<PokemonDetails[]>([]);
     
     useEffect(()=>{

@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { ReactElement, useContext } from "react";
 import PokemonContext from "../context/PokemonContext";
 import Header from "../components/Header";
 
-function CapturedPokemonList() {
+function CapturedPokemonList(): ReactElement {
     
     const {pokedex} = useContext(PokemonContext);
     

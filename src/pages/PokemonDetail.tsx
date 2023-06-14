@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { ReactElement, useContext, useEffect, useState } from "react";
+
 import { POKE_URL } from "../context/PokemonProvider";
 import Header from "../components/Header";
 import {History, Location} from 'history';
 import { PokemonDetails } from "../types/Pokemon";
 import PokemonContext from "../context/PokemonContext";
-import { Link } from "react-router-dom";
-
 
 
 type MatchParams = {
@@ -20,7 +19,7 @@ type Props = {
 }
 
 
-function PokemonDetail({match: {params: {id}}}: Props) {
+function PokemonDetail({match: {params: {id}}}: Props): ReactElement {
     const [pokemon, setPokemon] = useState<PokemonDetails>();
     const {setPokedex, pokedex} = useContext(PokemonContext);
 

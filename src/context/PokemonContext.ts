@@ -3,7 +3,7 @@ import { Pokemon, PokemonDetails } from "../types/Pokemon";
 
 export type GlobalContent = {
     pokemonList: Pokemon[],
-    setPokemonList: Dispatch<SetStateAction<never[]>>
+    setPokemonList: Dispatch<SetStateAction<Pokemon[]>>
     pokedex: PokemonDetails[],
     setPokedex: Dispatch<SetStateAction<PokemonDetails[]>>
 }
